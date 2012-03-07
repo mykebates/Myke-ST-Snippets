@@ -1,0 +1,51 @@
+<snippet>
+	<content><![CDATA[
+// $2 Post Type
+add_action( 'init', 'register_cpt_${1:cptID}' );
+function register_cpt_$1() {
+
+	\$labels = array(
+			'name' => ( '${2:cptName}s' ),
+			'singular_name' => ( '$2' ),
+			'add_new' => ( 'Add New' ),
+			'add_new_item' => ( 'Add New $2' ),
+			'edit_item' => ( 'Edit $2' ),
+			'new_item' => ( 'New $2' ),
+			'view_item' => ( 'View $2' ),
+			'search_items' => ( 'Search $2s' ),
+			'not_found' => ( 'No $2s found' ),
+			'not_found_in_trash' => ( 'No $2s found in Trash' ),
+			'parent_item_colon' => ( 'Parent $2:' ),
+			'menu_name' => ( '$2' ),
+	);
+
+	\$args = array(
+			'labels' => \$labels,
+			'hierarchical' => true,
+			'description' => 'My $2 pieces',
+			'supports' => array( 'title', 'editor', 'thumbnail' ),
+			'taxonomies' => array( 'post_tag' ),
+			'public' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'menu_position' => 5,
+
+			'show_in_nav_menus' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'has_archive' => true,
+			'query_var' => true,
+			'can_export' => true,
+			'rewrite' => true,
+			'capability_type' => 'post'
+	);
+
+	register_post_type( '$1', \$args );
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wpcpt</tabTrigger>
+	<description>WordPress Custom Post Type Generator</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
