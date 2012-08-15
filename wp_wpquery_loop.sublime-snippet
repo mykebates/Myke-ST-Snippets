@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+<?php
+\$my_query = new WP_Query( array( 'post_type' => 'slider', 'showposts' => 10 ) );
+while (\$my_query->have_posts()) : \$my_query->the_post();
+?>
+<h1><?php the_title(); ?></h1>
+<?php endwhile; wp_reset_postdata(); ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<TABTRIGGER>wpqueryloop</TABTRIGGER>
+	<description>WordPress WP_Query Loop - Myke</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
