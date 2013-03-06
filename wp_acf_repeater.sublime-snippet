@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+<?php
+\$rows = get_field('${1:fieldID}');
+if(get_field('$1')): ?>
+
+    <ul>
+ 
+    <?php while(has_sub_field('$1')): ?>
+ 
+        <li><?php the_sub_field('sub_field_1'); ?></li>
+ 
+    <?php endwhile; ?>
+ 
+    </ul>
+ 
+<?php endif; ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>acfr</tabTrigger>
+	<description>WordPress Advanced Custom Field Repeater</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

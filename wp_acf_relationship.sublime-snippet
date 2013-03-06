@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+ <?php
+\$posts = get_field('${1:fieldID}');
+if( \$posts ): ?>
+    <ul>
+    <?php foreach( \$posts as \$post): setup_postdata(\$post); ?>
+        <li>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <span>Post Object Custom Field: <?php the_field('field_name'); ?></span>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <?php wp_reset_postdata(); ?>
+<?php endif; ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>acfrelation</tabTrigger>
+	<description>WordPrress ACF Relationship Field</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
